@@ -11,18 +11,18 @@ Uses .txt files as a database.
 The data base needs .txt files named "Master.txt" and "FileRecords.txt"
 
 ### Master.txt Style
-- Customer number	   Customer name	     Customer balance
+- Customer_number	   Customer_name	     Customer_balance
 - I.E.
 - 0000 XXXXXXXXXXXXXXXXXXXX	0.00
 - Each value is seperate by a space and the name cannot include spaces. Do not include the column headers, only values.
 
 ### FileRecords.txt Style
 - O for orders
-- O	Customer number	Transaction number	Item Ordered	Quantity	Cost
+- O	Customer_number	Transaction_number	Item_ordered	Quantity Cost
 - I.E.
 - O 0000 0000 XXXXXXXXXXXXXXXXXXXX 0000 0.00
 - P for payments
-- P	0000	0000	Payment amount		
+- P	0000	0000	Payment_amount		
 - I.E.
 - P 0000 0000 0.00
 - Each value is seperate by a space and the name cannot include spaces. Do not include the column headers, only values.
