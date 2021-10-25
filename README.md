@@ -2,7 +2,7 @@
 This is a persoanl project that I am working on to put into practice what I have learned so far.
 It is going to be a work in progress for the forseeable future.
 This is not a complete program but it will run. 
-Please refer to my Accounting Project page for my progress. 
+Please refer to my Accounting Program project page for my progress. 
 
 Version .1
 It is currently a very primitive version of an accounting software and incomplete.
