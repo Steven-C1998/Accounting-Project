@@ -3,6 +3,7 @@ This is a persoanl project that I am working on to put into practice what I have
 It is going to be a work in progress for the forseeable future.
 This is not a complete program but it will run. 
 Please refer to my Accounting Program project page for my progress. 
+This is a package called accountingProgram.
 
 Version .1
 It is currently a very primitive version of an accounting software and incomplete.
@@ -23,5 +24,6 @@ O 0000 0000 XXXXXXXXXXXXXXXXXXXX 0000 0.00
 P	0000	0000	Payment amount		
 I.E.
 P 0000 0000 0.00
+Each value is seperate by a space and the name cannot include spaces. Do not include the column headers, only values.
 
 Sample Files are provided
