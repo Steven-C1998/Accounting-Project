@@ -9,7 +9,6 @@ final class FileKeeper {
 	private static String[][] masterFileArray = new String[CheckFor.masterLength()][3]; //Master File Array
 	private static String[][] masterArrayUpdate = new String[CheckFor.masterLength()][3]; //Updated Master File Array after masterUpdate call
 	private static String[][] recordFileArray; //Records in file array
-
 	public static void setRecordFileArray(String[][] correctedFileArray) { //sets record file array
 		recordFileArray = correctedFileArray;
 	}
