@@ -22,7 +22,7 @@ The data base needs .txt files named "Master.txt" and "FileRecords.txt"
 - I.E.
 - O 0000 0000 XXXXXXXXXXXXXXXXXXXX 0000 0.00
 - P for payments
-- P	0000	0000	Payment_amount		
+- P	Customer_number	Transaction_number Payment_amount		
 - I.E.
 - P 0000 0000 0.00
 - Each value is seperate by a space and the name cannot include spaces. Do not include the column headers, only values.
