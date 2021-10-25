@@ -5,7 +5,7 @@ import java.io.File;
 import java.util.Scanner;
 
 final class CheckFor {
-	protected static boolean dupicateFound = false;
+	protected static boolean dupicateFound = false;//for use in a future method
 
 	static int masterLength() { // check for the row length for masterCount
 		Scanner fileIn;
