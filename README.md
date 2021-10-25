@@ -27,4 +27,6 @@ The data base needs .txt files named "Master.txt" and "FileRecords.txt"
 - P 0000 0000 0.00
 - Each value is seperate by a space and the name cannot include spaces. Do not include the column headers, only values.
 
-Sample Files are provided
+Sample Files are provided.
+
+The program currently runs only in the IDE but making it an executable will be done once the project is completed.
