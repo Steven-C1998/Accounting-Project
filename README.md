@@ -28,5 +28,7 @@ The data base needs .txt files named "Master.txt" and "FileRecords.txt"
 - Each value is seperate by a space and the name cannot include spaces. Do not include the column headers, only values.
 
 Sample Files are provided.
-
+### known bugs
+- dupeCheck will print out the first non duplicate entry as a duplicate too.
+- a line if checked twice due to dupeCheck it will display the same line twice.
 The program currently runs only in the IDE but making it an executable will be done once the project is completed.
