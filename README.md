@@ -15,6 +15,7 @@ The data base needs .txt files named "Master.txt" and "FileRecords.txt"
 - I.E.
 - 0000 XXXXXXXXXXXXXXXXXXXX	0.00
 - Each value is seperate by a space and the name cannot include spaces. Do not include the column headers, only values.
+- All entries must be in numerical order by Customer_Number
 
 ### FileRecords.txt Style
 - O for orders
@@ -26,6 +27,7 @@ The data base needs .txt files named "Master.txt" and "FileRecords.txt"
 - I.E.
 - P 0000 0000 0.00
 - Each value is seperate by a space and the name cannot include spaces. Do not include the column headers, only values.
+- All entries must be in numerical order by Customer_Number
 
 Sample Files are provided.
 ### known bugs
