@@ -8,7 +8,7 @@ This is a package called accountingProgram.
 ## Version .1
 It is currently a very primitive version of an accounting software and incomplete.
 Uses .txt files as a database.
-The data base needs .txt files named "Master.txt" and "FileRecords.txt" and they need to be in the same project folder.
+The database needs .txt files named "Master.txt" and "FileRecords.txt" and they need to be in the same project folder.
 
 ### Master.txt Style
 - Customer_number	   Customer_name	     Customer_balance
