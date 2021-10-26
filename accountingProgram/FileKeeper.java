@@ -2,15 +2,45 @@ package accountingProgram;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.Arrays;
 import java.util.Scanner;
 
-final class FileKeeper {
-	private static String[][] masterFileArray = new String[CheckFor.masterLength()][3]; //Master File Array
-	private static String[][] masterArrayUpdate = new String[CheckFor.masterLength()][3]; //Updated Master File Array after masterUpdate call
-	private static String[][] recordFileArray; //Records in file array
+class FileKeeper {
+	protected static String[][] masterFileArray = new String[CheckFor.masterLength()][3]; //Master File Array
+	protected static String[][] masterArrayUpdate = new String[CheckFor.masterLength()][3]; //Updated Master File Array after masterUpdate call
+	protected static String[][] recordFileArray; //Records in file array
+	protected static String[][] dupeMasterArray =  new String[CheckFor.masterLength()][3]; //stores duplicate master data
+	protected static String[][] dupeFileRecords = new String[CheckFor.fileLength()][];; //stores duplicate record data
+	protected static String[][] correctedMasterArray =  new String[CheckFor.masterLength()][]; //stores the corrected master data
+	protected static String[][] correctedFileRecords = new String[CheckFor.fileLength()][];; //stores the corrected record data
+
 	public static void setRecordFileArray(String[][] correctedFileArray) { //sets record file array
 		recordFileArray = correctedFileArray;
+	}
+
+	public static String[][] getRecordArray (){ //returns array of file records
+		return recordFileArray;
+	}
+
+	public static String[][] getMasterArray () { //returns array of master file
+		return masterFileArray;
+	}
+
+	public static String[][] getMasterUpdate () { //returns updated master array
+		return masterArrayUpdate;
+	}
+
+	public static String[][] getDupeMasterArray () { //returns updated master array
+		return dupeMasterArray;
+	}
+
+	public static String[][] getDupeFileRecords () { //returns updated master array
+		return dupeFileRecords;
+	}
+	public static String[][] getCorrectedMasterArray () { //returns updated master array
+		return correctedMasterArray;
+	}
+	public static String[][] getCorrectedFileRecords () { //returns updated master array
+		return correctedFileRecords;
 	}
 
 	static void masterUpdate () { //reads through transactions and updates the master record
@@ -20,7 +50,6 @@ final class FileKeeper {
 				masterArrayUpdate[h][j] = masterFileArray[h][j];
 			}
 		}
-		//System.out.println(Arrays.deepToString(masterArrayUpdate));
 		for(int m = 0;m<recordFileArray.length;) {
 			if (masterFileArray[i][0].equals(recordFileArray[m][1])) {
 				String fileA = recordFileArray[m][0];
@@ -79,17 +108,6 @@ final class FileKeeper {
 		}
 	}
 
-	public static String[][] getRecordArray (){ //returns array of file records
-		return recordFileArray;
-	}
-
-	public static String[][] getMasterArray () { //returns array of master file
-		return masterFileArray;
-	}
-
-	public static String[][] getMasterUpdate () { //returns updated master array
-		return masterArrayUpdate;
-	}
 
 	static void masterReader () { //reads in master file in 2d array
 		Scanner fileIn;
