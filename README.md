@@ -31,5 +31,5 @@ Sample Files are provided.
 ### known bugs
 - dupeCheck will print out the first non duplicate entry as a duplicate too.
 - a line if checked twice due to dupeCheck it will display the same line twice.
-- 
+
 The program currently runs only in the IDE but making it an executable will be done once the project is completed.
