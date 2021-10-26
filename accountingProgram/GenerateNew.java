@@ -72,7 +72,7 @@ final class GenerateNew extends FileKeeper{
 		System.setOut(originalOut);
 	}
 	
-	 //corrects arrays for duplicate entries. Trying to fix errors relating to duplicates found one after another
+	 //corrects arrays for duplicate entries. Trying to fix errors relating to identitcal duplicates found in sucession
 	static void correctedArray(String[][] masterArray, String[][] dupeArray, String[][] correctedArray, int dupeLength) {
 		String compareTo ="";
 		String compare ="";
