@@ -4,8 +4,14 @@ import java.io.FileNotFoundException;
 import java.io.File;
 import java.util.Scanner;
 
-final class CheckFor {
-	protected static boolean dupicateFound = false;//for use in a future method
+final class CheckFor extends FileKeeper{
+	private static boolean dupicateFound = false;
+	private static int masterDupeLength = 0;
+	private static int recordDupeLength = 0;
+	
+	static boolean getDupeFound() { //returns if a duplicate was found
+		return dupicateFound;
+	}
 
 	static int masterLength() { // check for the row length for masterCount
 		Scanner fileIn;
@@ -67,7 +73,7 @@ final class CheckFor {
 		return counter;
 	}
 
-	static double balance (String[][] masterArray) {
+	static double balance (String[][] masterArray) { //returns the balance
 		double sum = 0;
 		for (int i = 0; i < masterArray.length; i++) {
 			sum += Double.parseDouble(masterArray[i][2]);
@@ -75,7 +81,7 @@ final class CheckFor {
 		return sum;
 	}
 
-	static void dupeCheck(String[][] masterArray) { //Checks for duplicates in the master file
+	static void dupeCheck(String[][] masterArray, String[][] dupeArray) { //Checks for duplicates in the master file
 		String compareTo ="";
 		String compare ="";
 		String fill = "";
@@ -83,6 +89,7 @@ final class CheckFor {
 		String fillers = ""; 
 		int j = 1;
 		int counter = 0;
+		int dupeCounter = 0;
 		for (int i = 0;i<masterArray.length;i++) {
 			fill="";
 			for(int p = 0;p<masterArray[i].length;p++) {
@@ -100,7 +107,33 @@ final class CheckFor {
 				}	
 				if(fill.equals(filler)) {
 					for(int f = 0;f<masterArray[j].length;f++) {
-						fillers += masterArray[j][f] + " ";		
+						fillers += masterArray[j][f] + " ";	
+					}
+					if (masterArray[j].length == 3) {
+						String one = masterArray[j][0];
+						String two = masterArray[j][1];
+						String three = masterArray[j][2];
+						dupeArray[dupeCounter] = new String[]{one ,two, three};
+						dupeCounter++;
+						masterDupeLength++;
+					} else if (masterArray[j].length == 4) {
+						String one = masterArray[j][0];
+						String two = masterArray[j][1];
+						String three = masterArray[j][2];
+						String four = masterArray[j][3];
+						dupeArray[dupeCounter] = new String[]{one ,two, three, four};
+						dupeCounter++;
+						recordDupeLength++;
+					} else if (masterArray[j].length == 6) {
+						String one = masterArray[j][0];
+						String two = masterArray[j][1];
+						String three = masterArray[j][2];
+						String four = masterArray[j][3];
+						String five = masterArray[j][4];
+						String six = masterArray[j][5];
+						dupeArray[dupeCounter] = new String[]{one ,two, three, four, five, six};
+						dupeCounter++;
+						recordDupeLength++;
 					}
 					dupicateFound = true;
 					System.out.println("Duplicate entry detected on line " 
@@ -108,16 +141,22 @@ final class CheckFor {
 					j++;
 					counter++;
 					filler="";
-					fillers="";
+					fillers="";					
 				} else if(!(fill.equals(filler))) {
 					j++;
 					counter++;
 					filler="";
-					//continue;
 				}
-
 			}
 		}
 	}
-}
+	
+	static int getMasterDupeLength() { //returns array length of the duplicate master array
+		return masterDupeLength;
+	}
+	
+	static int getRecordDupeLength() { // returns array length of the duplicate records array
+		return recordDupeLength;
+	}
 
+}
